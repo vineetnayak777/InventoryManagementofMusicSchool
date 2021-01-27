@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Level & Raag Association Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width="100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+           <tr style="border: 1px solid black;">
+                <th width="(100/2)%" style="border: 1px solid black;">Level_id</th>
+                <th width="(100/2)%" style="border: 1px solid black;">Raga_Name</th>
+            </tr>
+            {% for level_raga in level_ragas %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/2)%" style="border: 1px solid black;">{{level_raga[0]}}</td>
+                        <td width="(100/2)%" style="border: 1px solid black;">{{level_raga[1]}}</td>
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+            {% endfor %}
+        </table>
+    </br>
+        <h3>Delete Level Raga Record?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/delete_level_raga_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Level_id" placeholder="Enter Level Id">
+            </div>
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Raga_name" placeholder="Enter Raga Name">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+        </form>
+    </br>
+
+    <h3>Retrieve Raga Details of a Particular Level?</h3>
+    <form style="text-align: center; margin-top: 6%;" action='/retrieve_raga_from_lr_button' method="POST">
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Level_id" placeholder="Enter Level_id">
+        </div>
+        <button style="margin-top: 30px;" type="submit" value="Submit">Extract</button>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; font-size: 25px; margin-top: 10%">Add Event Details</h1>
+
+    <form style="text-align: center; margin-top: 6%;" action='/add_event_button' method="POST">
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="S_No" placeholder="Enter Serial Number">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Agency_Id" placeholder="Enter Agency_Id">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Student_Reg_No" placeholder="Enter Student_Reg_No">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Place" placeholder="Enter Place">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Date_of_Event" placeholder="Enter Date_of_Event">
+        </div>
+
+        <button style="margin-top: 30px;" type="submit" value="Submit">Submit</button>
+    </form>
+{% endblock %}

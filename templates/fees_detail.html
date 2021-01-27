@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <h1 style="text-align: center; margin-top: 107px;">Fees Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width = "100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+            <center><tr style="border: 1px solid black;">
+                <th width="(100/3)%" style="border: 1px solid black;">Fees_Id</th>
+                <th width="(100/3)%" style="border: 1px solid black;">Monthly_Fees</th>
+                <th width="(100/3)%" style="border: 1px solid black;">Admission_Fees</th>
+            </tr></center>
+            {% for fee in fees %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/3)%" style="border: 1px solid black;">{{fee[0]}}</td>
+                        <td width="(100/3)%" style="border: 1px solid black;">{{fee[1]}}</td>
+                        <td width="(100/3)%" style="border: 1px solid black;">{{fee[2]}}</td>
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+
+            {% endfor %}
+        </table>
+    </br>
+
+    <h3>Update Fees?</h3>
+    <form style="text-align: center; margin-top: 6%;" action='/update_fees_button' method="POST">
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Fees_Id" placeholder="Enter Fees_Id">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Monthly_Fees" placeholder="Enter Monthly_Fees">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Admission_Fees" placeholder="Admission_Fees">
+        </div>
+        <button style="margin-top: 30px;" type="submit" value="Submit">Update</button>
+    </form>
+</br>
+    <h3>Delete Fees Data Record?</h3>
+    <form style="text-align: center; margin-top: 6%;" action='/delete_fees_button' method="POST">
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Fees_id" placeholder="Enter Fees_id">
+        </div>
+        <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+    </form>
+    </div>
+{% endblock %}

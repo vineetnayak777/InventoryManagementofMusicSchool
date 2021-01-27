@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDlX6y37e9CL7ev-oElde7M0Jxe68CCY9ySQ&usqp=CAU" alt="Welcome"></center>
+<marquee behavior="scroll" direction="Left" scrollamount="5" style="font-size:30px">Welcome to SadhuMaharaj Music School Database</marquee>
+<marquee behavior="scroll" direction="Right" scrollamount="5" style="font-size:30px">"Sometimes music is the only medicine the heart and soul need."</marquee>
+<div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Add Data</h5>
+      <a href="add_data" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">View Data</h5>
+      <a href="view_data" class="btn btn-primary">Go</a>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">Misc Data</h5>
+      <a href="misc_data" class="btn btn-primary">Go</a>
+    </div>
+  </div> 
+{% endblock %}

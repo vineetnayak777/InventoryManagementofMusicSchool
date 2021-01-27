@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; font-size: 25px; margin-top: 10%">Fees to be Paid</h1>
+    
+    <form style="text-align: center; margin-top: 6%;" action='/add_fees_button' method="POST">
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Fees_id" placeholder="Enter Fees_id">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Monthly_Fees" placeholder="Enter Monthly_Fees">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Admission_Fees" placeholder="Enter Admission_Fees">
+        </div>
+        <button style="margin-top: 30px;" type="submit" value="Submit">Submit</button>
+    </form>
+{% endblock %}

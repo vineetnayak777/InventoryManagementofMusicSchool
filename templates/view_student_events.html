@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1 style="text-align: center; margin-top: 107px;">Student & Events</h1>
+<div style="text-align: center; margin: 170px;" >
+    <table width="100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+        <tr style="border: 1px solid black;">
+            <th width="(100/3)%" style="border: 1px solid black;">Name</th>
+            <th width="(100/3)%" style="border: 1px solid black;">Reg_No</th>
+            <th width="(100/3)%" style="border: 1px solid black;">Date_of_Event</th>
+        </tr>
+        {% for view_student_event in view_student_events %} 
+                <tr width="100%" style="border: 1px solid black;">
+                    <td width="(100/3)%" style="border: 1px solid black;">{{view_student_event[0]}}</td>
+                    <td width="(100/3)%" style="border: 1px solid black;">{{view_student_event[1]}}</td>
+                    <td width="(100/3)%" style="border: 1px solid black;">{{view_student_event[2]}}</td>
+                    <td style="border: 1px solid black;"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</br>
+</div>
+{% endblock %}

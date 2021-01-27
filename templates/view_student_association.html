@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1 style="text-align: center; margin-top: 107px;">Student & Year of Association</h1>
+<div style="text-align: center; margin: 170px;" >
+    <table width="100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+        <tr style="border: 1px solid black;">
+            <th width="(100/2)%" style="border: 1px solid black;">Student_Name</th>
+            <th width="(100/2)%" style="border: 1px solid black;">Total_Year_of_Association</th>
+        </tr>
+        {% for view_association in view_associations %} 
+                <tr width="100%" style="border: 1px solid black;">
+                    <td width="(100/2)%" style="border: 1px solid black;">{{view_association[0]}}</td>
+                    <td width="(100/2)%" style="border: 1px solid black;">{{view_association[1]}}</td>
+                    <td style="border: 1px solid black;"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</br>
+</div>
+{% endblock %}

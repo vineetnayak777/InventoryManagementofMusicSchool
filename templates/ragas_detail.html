@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Raga Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width = "100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+            <center><tr style="border: 1px solid black;">
+                <th width="(100/3)%" style="border: 1px solid black;">Raga_Name</th>
+                <th width="(100/3)%" style="border: 1px solid black;">Aaroh</th>
+                <th width="(100/3)%" style="border: 1px solid black;">Avaroh</th>
+            </tr></center>
+            {% for raga in ragas %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/3)%" style="border: 1px solid black;">{{raga[0]}}</td>
+                        <td width="(100/3)%" style="border: 1px solid black;">{{raga[1]}}</td>
+                        <td width="(100/3)%" style="border: 1px solid black;">{{raga[2]}}</td>
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+
+            {% endfor %}
+        </table>
+    </br>
+        <h3>Delete Raga Record?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/delete_raga_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Raga_Name" placeholder="Enter Raga Name">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+        </form>
+    </div>
+  {% endblock %}

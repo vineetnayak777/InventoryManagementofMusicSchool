@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Fees Payment Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width="100%" style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+            <tr style="border: 1px solid black;">
+                <th width="(100/4)%" style="border: 1px solid black;">S_No</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Student_Reg_No</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Date_of_Payment</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Amount</th>
+
+            </tr>
+            {% for fee in fees %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/4)%" style="border: 1px solid black;">{{fee[0]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{fee[1]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{fee[2]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{fee[3]}}</td>
+
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+
+            {% endfor %}
+        </table>
+    </br>
+        <h3>Delete Fees Payment Record?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/delete_fees_payment_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="S_No" placeholder="Enter S_No">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+        </form>
+    </br>
+        <h3>Retrieve Data of fees paid by individaul students?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/retrieve_student_fees_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Student_Reg_No" placeholder="Enter Student_Reg_No">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
