@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Required Student Fees Payment Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width="100%" style="border: 1px solid black; text-align: center; border-collapse: collapse;">
+            <tr style="border: 1px solid black;">
+                <th width="(100/3)%" style="border: 1px solid black;">Student_Reg_No</th>
+                <th width="(100/3)%" style="border: 1px solid black;">Total_Fees_Paid</th>
+            </tr>
+            {% for retrieve_query in retrieve_querys %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/3)%" style="border: 1px solid black;">{{retrieve_query[0]}}</td>
+                        <td width="(100/3)%" style="border: 1px solid black;">{{retrieve_query[1]}}</td>
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+            {% endfor %}
+    </table>
+</br>
+{% endblock %}

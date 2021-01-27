@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Ragas present in the level is</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width="100%" style="border: 1px solid black; text-align: center; border-collapse: collapse;">
+            <tr style="border: 1px solid black;">
+                <th width="(100/4)%" style="border: 1px solid black;">Level_id</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Raga_Name</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Aaroh</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Avaroh</th>
+            </tr>
+            {% for retrieve_raga_from_lr in retrieve_raga_from_lr_querys %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/4)%" style="border: 1px solid black;">{{retrieve_raga_from_lr[0]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{retrieve_raga_from_lr[1]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{retrieve_raga_from_lr[2]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{retrieve_raga_from_lr[3]}}</td>
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+            {% endfor %}
+    </table>
+
+    </div>
+{% endblock %}

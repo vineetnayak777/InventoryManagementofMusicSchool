@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; font-size: 25px; margin-top: 10%">Student Registration</h1>
+    
+    <form style="text-align: center; margin-top: 6%;" action='/add_student_button' method="POST">
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Name" placeholder="Enter Name">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Reg_No" placeholder="Enter Registration Number">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Level" placeholder="Enter Level">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Contact" placeholder="Enter Contact">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Date_Joined" placeholder="Enter Date Joined">
+        </div>
+        <div style="padding: 20px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Fees_Id" placeholder="Enter Fees_Id">
+        </div>
+        <div style="padding: 10px 0;">
+            <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Age" placeholder="Enter Age">
+        </div>
+
+        <button style="margin-top: 30px;" type="submit" value="Submit">Submit</button>
+    </form>
+{% endblock %}

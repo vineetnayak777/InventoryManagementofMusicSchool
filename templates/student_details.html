@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Students Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width="100%" style="border: 1px solid black; text-align: center; border-collapse: collapse;">
+            <tr style="border: 1px solid black;">
+                <th width="(100/7)%" style="border: 1px solid black;">Name</th>
+                <th width="(100/7)%" style="border: 1px solid black;">Reg_No</th>
+                <th width="(100/7)%" style="border: 1px solid black;">Level</th>
+                <th width="(100/7)%" style="border: 1px solid black;">Contact</th>
+                <th width="(100/7)%" style="border: 1px solid black;">DateJoined</th>
+                <th width="(100/7)%" style="border: 1px solid black;">Fees_Id</th>
+                <th width="(100/7)%" style="border: 1px solid black;">Age</th>
+            </tr>
+            {% for student in students %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[0]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[1]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[2]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[3]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[4]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[5]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;">{{student[6]}}</td>
+                        <td width="(100/7)%" style="border: 1px solid black;"></td>
+                    </tr>
+            {% endfor %}
+        </table>
+    </br>
+        <h3>Delete Student Record?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/delete_student_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Reg_No" placeholder="Enter Reg_No">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+        </form>
+    </div>
+{% endblock %}

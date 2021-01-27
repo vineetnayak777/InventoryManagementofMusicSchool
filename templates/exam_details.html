@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; margin-top: 107px;">Exam Details</h1>
+    <div style="text-align: center; margin: 170px;" >
+        <table width = "100%"  style="border: 1px solid black; text-align: center;border-collapse: collapse;">
+            <tr style="border: 1px solid black;">
+                <th width="(100/4)%" style="border: 1px solid black;">E_S_no</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Student_Reg_No</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Status</th>
+                <th width="(100/4)%" style="border: 1px solid black;">Date_of_Examination</th>
+
+            </tr>
+            {% for exam in exams %} 
+                    <tr style="border: 1px solid black;">
+                        <td width="(100/4)%" style="border: 1px solid black;">{{exam[0]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{exam[1]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{exam[2]}}</td>
+                        <td width="(100/4)%" style="border: 1px solid black;">{{exam[3]}}</td>
+
+                        <td style="border: 1px solid black;"></td>
+                    </tr>
+            {% endfor %}
+        </table>
+    </br>
+        <h3>Delete Exam Record?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/delete_exam_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="E_S_No" placeholder="Enter E_S_No">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Delete</button>
+        </form>
+    </br>
+        <h3>Update Status?</h3>
+        <form style="text-align: center; margin-top: 6%;" action='/update_exam_button' method="POST">
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="E_S_No" placeholder="Enter E_S_No">
+            </div>
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Student_Reg_No" placeholder="Enter Student_Reg_No">
+            </div>
+            <div style="padding: 10px 0;">
+                <input style="background-color: #d3d1d1; padding: 10px 20px;" type="text" name="Status" placeholder="Status">
+            </div>
+            <button style="margin-top: 30px;" type="submit" value="Submit">Update</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+mysql> desc students;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Name        | varchar(50) | YES  |     | NULL    |       |
+| Reg_No      | char(8)     | NO   | PRI | NULL    |       |
+| Level       | int         | YES  | MUL | NULL    |       |
+| Contact     | bigint      | YES  |     | NULL    |       |
+| Date_Joined | date        | YES  |     | NULL    |       |
+| Fees_id     | int         | YES  | MUL | NULL    |       |
+| Age         | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+
+mysql> desc levels;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Level_id    | int         | NO   | PRI | NULL    |       |
+| Name        | varchar(15) | YES  |     | NULL    |       |
+| Actual_Name | varchar(20) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+
+mysql> desc examination;
++---------------------+----------+------+-----+---------+-------+
+| Field               | Type     | Null | Key | Default | Extra |
++---------------------+----------+------+-----+---------+-------+
+| E_S_No              | int      | NO   | PRI | NULL    |       |
+| Student_Reg_No      | char(8)  | YES  | MUL | NULL    |       |
+| Status              | char(10) | YES  |     | NULL    |       |
+| Date_of_Examination | date     | YES  |     | NULL    |       |
++---------------------+----------+------+-----+---------+-------+
+
+
+mysql> desc events;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| S_No           | int         | NO   | PRI | NULL    |       |
+| Agency_Id      | int         | YES  | MUL | NULL    |       |
+| Student_Reg_No | char(8)     | YES  | MUL | NULL    |       |
+| Place          | varchar(30) | YES  |     | NULL    |       |
+| Date_of_Event  | date        | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+
+mysql> desc level_ragas;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Level_id  | int         | NO   | PRI | NULL    |       |
+| Raga_name | varchar(15) | NO   | PRI | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
+
+mysql> desc ragas;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Raga_Name | varchar(15) | NO   | PRI | NULL    |       |
+| Aaroh     | varchar(60) | YES  |     | NULL    |       |
+| Avaroh    | varchar(60) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
+
+mysql> desc agencies;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Agency_Id    | int         | NO   | PRI | NULL    |       |
+| Agency_name  | varchar(20) | YES  |     | NULL    |       |
+| Agency_Place | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+
+mysql> desc fees;
++----------------+------+------+-----+---------+-------+
+| Field          | Type | Null | Key | Default | Extra |
++----------------+------+------+-----+---------+-------+
+| Fees_id        | int  | NO   | PRI | NULL    |       |
+| Monthly_Fees   | int  | YES  |     | NULL    |       |
+| Admission_Fees | int  | YES  |     | NULL    |       |
++----------------+------+------+-----+---------+-------+
+
+
+mysql> desc fees_payment;
++-----------------+---------+------+-----+---------+-------+
+| Field           | Type    | Null | Key | Default | Extra |
++-----------------+---------+------+-----+---------+-------+
+| S_No            | int     | NO   | PRI | NULL    |       |
+| Student_Reg_No  | char(8) | YES  | MUL | NULL    |       |
+| Date_of_Payment | date    | YES  |     | NULL    |       |
+| Amount          | int     | YES  |     | NULL    |       |
++-----------------+---------+------+-----+---------+-------+
